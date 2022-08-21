@@ -32,9 +32,7 @@ export default function App() {
   return (
     <ThemeProvider theme={GlobalTheme}>
       <StatusBar
-        style="dark"
-        backgroundColor="transparent"
-        translucent
+        style="inverted"
       />
       <Home />
     </ThemeProvider>
