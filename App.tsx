@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components/native';
 import GlobalTheme from '@src/global/styles/theme';
 
 import { StatusBar } from 'expo-status-bar';
-import Dashboard from '@src/screens/Dashboard';
+import Home from '@src/screens/Home';
 
 import {
   useFonts,
@@ -32,7 +32,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <Dashboard />
+      <Home />
     </ThemeProvider>
   )
 }
