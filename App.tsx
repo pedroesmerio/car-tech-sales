@@ -9,16 +9,16 @@ import Home from '@src/screens/Home';
 
 import {
   useFonts,
-  Poppins_700Bold,
-  Poppins_500Medium,
-  Poppins_400Regular,
-} from '@expo-google-fonts/poppins'
+  Roboto_700Bold,
+  Roboto_500Medium,
+  Roboto_400Regular,
+} from '@expo-google-fonts/roboto'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Poppins_700Bold,
-    Poppins_500Medium,
-    Poppins_400Regular,
+    Roboto_700Bold,
+    Roboto_500Medium,
+    Roboto_400Regular,
   })
 
   if (!fontsLoaded) {
