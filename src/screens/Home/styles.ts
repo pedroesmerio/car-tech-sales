@@ -1,38 +1,31 @@
 import styled from 'styled-components/native';
-import { TextInput } from 'react-native'
+import { RFValue } from 'react-native-responsive-fontsize'
 
 export const Container = styled.View`
   flex: 1;
   align-items: center;
-  justify-content: top;
+  justify-content: space-between;
+
+  padding: 0 ${RFValue(20)}px;
 
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-export const SearchInput = styled.TextInput`
-  width: 90%;
-  height: 56px;
+export const NoCarContainer = styled.View`
+  align-items: center;
+  justify-content: space-around;
 
-  border-radius: 6px;
-
-  justify-content: flex-end;
-  align-items: flex-end;
-
-  margin: 20px;
-  padding: 0 20px;
-
-  border: solid 1px;
-  border-color: ${({ theme }) => theme.colors.gray_medium};
+  margin: ${RFValue(20)}px 0;
 
   background-color: ${({ theme }) => theme.colors.background};
-
-  font-size: 18px;
-
-`
+`;
 
 export const Title = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.bold};
-  font-size: 24px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.gray_light};
-`;
+  margin-bottom: ${RFValue(340)}px ;
+  margin-top: ${RFValue(95)}px ;
+
+  font-family: ${({ theme }) => theme.fonts.medium};
+  font-size: ${RFValue(20)}px;
+
+  color: ${({ theme }) => theme.colors.gray_medium};
+`
