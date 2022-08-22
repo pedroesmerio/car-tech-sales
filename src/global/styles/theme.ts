@@ -5,6 +5,7 @@ export default {
     secondary: "#656AE9",
 
     red: "#FF5555",
+    green: "#38E029",
 
     gray: "#282828",
     gray_medium: "#AEAEB3",
