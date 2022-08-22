@@ -1,25 +1,50 @@
 import React from 'react'
-import { FlatList } from 'react-native';
-
-
-import theme from '@src/global/styles/theme';
 
 import { Header } from '@src/components/Header'
 
-import Icon from 'react-native-vector-icons/Feather';
+import { Container, NoCarContainer, Title } from './styles'
+import { Card } from '@src/components/Card'
 
-import { Container, SearchInput, Title } from './styles'
+import { carList } from '@src/utils/carsList'
+
+import { Button } from '@src/components/Button'
+import { FlatList } from 'react-native'
 
 export default function Home() {
   return (
-    <Container>
+    <>
       <Header />
+      <Container>
 
-      <SearchInput placeholder="Pesquisar">
-        <Icon name="search" size={30} color={theme.colors.gray_medium} />
-      </SearchInput>
+        <FlatList
+          data={carList}
+          keyExtractor={(item) => item.key}
+          renderItem={({ item }) => (
+            <Card
+              key={item.key}
+              name={item.name}
+              brand={item.brand}
+              year={item.year}
+              transmission={item.transmission}
+              fuel={item.fuel}
+              type={item.type}
+              basePrice={item.basePrice}
+            />
+          )}
+          style={{ flex: 1, width: '100%' }}
+          showsVerticalScrollIndicator={false}
+          ListEmptyComponent={() => (
+            <NoCarContainer>
+              <Title>
+                Nenhum carro encontrado
+              </Title>
+              <Button name='ADICIONAR' type='add' />
+            </NoCarContainer>
+          )}
+        />
 
-      <Title>Nenhum carro escontrado</Title>
-    </Container>
+
+      </Container>
+    </>
   )
 }
