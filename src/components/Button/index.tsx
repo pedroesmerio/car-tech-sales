@@ -7,7 +7,7 @@ type ButtonProps = {
   type: 'add' | 'save';
 }
 
-export function Button({ name, type, }: ButtonProps) {
+export function Button({ name, type }: ButtonProps) {
   return (
     <Container type={type}>
       <Title>{name}</Title>
