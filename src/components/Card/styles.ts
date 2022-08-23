@@ -44,7 +44,6 @@ export const Option = styled.View`
   height: ${RFValue(30)}px;
 `;
 
-
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${RFValue(10)}px;
@@ -66,7 +65,7 @@ export const Pricevalue = styled.Text`
 
 export const InfoImg = styled.Image`
   flex: 1;
+
   align-items: center;
-  object-fit: cover;
-  margin-top: 30px;
+  justify-content: center;
 `;

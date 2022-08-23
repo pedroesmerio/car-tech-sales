@@ -10,6 +10,7 @@ type CardProps = {
   fuel: string;
   type: string;
   basePrice: number;
+  imgUrl: string;
 }
 
 export function Card(props: CardProps) {
@@ -50,8 +51,10 @@ export function Card(props: CardProps) {
       </InfoCar>
 
       <InfoImg
-        source={require('assets/cars/coupe.png')}
+        source={{ uri: `https://raw.githubusercontent.com/pedroesmerio/car-tech-sales/main/src/assets/cars/${props.imgUrl}` }}
+        resizeMode='contain'
       />
+      {/* <InfoImg source={require('assets/cars/pickup.png')} /> */}
     </Container>
   );
 }

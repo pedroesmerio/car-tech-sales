@@ -3,12 +3,12 @@ import React from 'react'
 import { Header } from '@src/components/Header'
 
 import { Container, NoCarContainer, Title } from './styles'
-import { Card } from '@src/components/Card'
 
 import { carList } from '@src/utils/carsList'
 
 import { Button } from '@src/components/Button'
 import { FlatList } from 'react-native'
+import { Card } from '@src/components/Card'
 
 export default function Home() {
   return (
@@ -29,6 +29,7 @@ export default function Home() {
               fuel={item.fuel}
               type={item.type}
               basePrice={item.basePrice}
+              imgUrl={item.imgUrl}
             />
           )}
           style={{ flex: 1, width: '100%' }}
@@ -42,7 +43,6 @@ export default function Home() {
             </NoCarContainer>
           )}
         />
-
 
       </Container>
     </>
