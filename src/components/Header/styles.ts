@@ -31,7 +31,7 @@ export const TotalText = styled.Text`
 export const HeaderDetailContainer = styled.View`
   flex-direction: row;
   width: 100%;
-  height: ${RFValue(96)};
+  height: ${RFValue(86)};
   align-items: center;
   justify-content: space-between;
 `;
