@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
+import { RFValue } from 'react-native-responsive-fontsize'
+import Icon from 'react-native-vector-icons/Feather'
 
-export const Container = styled.View`
+export const HeaderHomeContainer = styled.View`
   flex-direction: row;
   width: 100%;
   height: 114px;
@@ -25,3 +27,29 @@ export const TotalText = styled.Text`
 
   color: ${({ theme }) => theme.colors.white};
 `;
+
+export const HeaderDetailContainer = styled.View`
+  flex-direction: row;
+  width: 100%;
+  height: ${RFValue(86)};
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const IconContainer = styled.View`
+  height: ${RFValue(24)};
+  width: ${RFValue(24)};
+`;
+
+export const FeatherIcon = styled(Icon)`
+  color: ${({ theme }) => theme.colors.offWhite};
+  font-family: ${({ theme }) => theme.fonts.bold};
+  font-size: ${RFValue(24)};
+`;
+
+export const Title = styled.Text`
+  color: ${({ theme }) => theme.colors.offWhite};
+  font-family: ${({ theme }) => theme.fonts.bold};
+  font-size:${RFValue(20)};
+`;
+
