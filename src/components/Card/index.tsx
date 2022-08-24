@@ -11,6 +11,7 @@ type CardProps = {
   type: string;
   basePrice: number;
   imgUrl: string;
+  onPress: () => void;
 }
 
 export function Card(props: CardProps) {
