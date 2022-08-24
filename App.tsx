@@ -15,6 +15,7 @@ import {
   Roboto_500Medium,
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto'
+import CarDetail from '@src/screens/CarDetail';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false)
@@ -52,7 +53,7 @@ export default function App() {
     <View onLayout={onLayout} style={styles.container}>
       <ThemeProvider theme={GlobalTheme}>
         <StatusBar style="inverted" />
-        <Home />
+        <CarDetail />
       </ThemeProvider>
     </View>
   );
