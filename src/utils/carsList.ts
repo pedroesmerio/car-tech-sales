@@ -8,7 +8,19 @@ export const carList = [
     fuel: 'Flex',
     type: 'SUV',
     basePrice: 230.981,
-    imgUrl: 'hatch.png'
+    imgUrl: 'hatch.png',
+    acessoriesItems: [
+      {
+        id: '0',
+        acessorieName: 'Ar condicionado',
+        price: 2700
+      },
+      {
+        id: '1',
+        acessorieName: 'Multimedia',
+        price: 3400
+      },
+    ]
   },
   {
     key: '1',
@@ -19,7 +31,19 @@ export const carList = [
     fuel: 'Flex',
     type: 'Hatch',
     basePrice: 113.571,
-    imgUrl: 'coupe.png'
+    imgUrl: 'coupe.png',
+    acessoriesItems: [
+      {
+        id: '0',
+        acessorieName: 'Ar condicionado',
+        price: 2700
+      },
+      {
+        id: '1',
+        acessorieName: 'Multimedia',
+        price: 3400
+      },
+    ]
   },
   {
     key: '2',
@@ -30,7 +54,19 @@ export const carList = [
     fuel: 'Flex',
     type: 'Comp.',
     basePrice: 48.981,
-    imgUrl: 'compact.png'
+    imgUrl: 'compact.png',
+    acessoriesItems: [
+      {
+        id: '0',
+        acessorieName: 'Ar condicionado',
+        price: 2700
+      },
+      {
+        id: '1',
+        acessorieName: 'Multimedia',
+        price: 3400
+      },
+    ]
   },
   {
     key: '3',
@@ -41,7 +77,19 @@ export const carList = [
     fuel: 'Gasol.',
     type: 'Sedan',
     basePrice: 367.151,
-    imgUrl: 'sedan.png'
+    imgUrl: 'sedan.png',
+    acessoriesItems: [
+      {
+        id: '0',
+        acessorieName: 'Ar condicionado',
+        price: 2700
+      },
+      {
+        id: '1',
+        acessorieName: 'Multimedia',
+        price: 3400
+      },
+    ]
   },
   {
     key: '4',
@@ -52,6 +100,18 @@ export const carList = [
     fuel: 'Diesel',
     type: 'Camin.',
     basePrice: 358.981,
-    imgUrl: 'pickup.png'
+    imgUrl: 'pickup.png',
+    acessoriesItems: [
+      {
+        id: '0',
+        acessorieName: 'Ar condicionado',
+        price: 2700
+      },
+      {
+        id: '1',
+        acessorieName: 'Multimedia',
+        price: 3400
+      },
+    ]
   }
 ]

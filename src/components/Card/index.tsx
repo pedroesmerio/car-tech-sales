@@ -54,7 +54,6 @@ export function Card(props: CardProps) {
         source={{ uri: `https://raw.githubusercontent.com/pedroesmerio/car-tech-sales/main/src/assets/cars/${props.imgUrl}` }}
         resizeMode='contain'
       />
-      {/* <InfoImg source={require('assets/cars/pickup.png')} /> */}
     </Container>
   );
 }

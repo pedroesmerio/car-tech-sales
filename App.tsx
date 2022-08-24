@@ -6,6 +6,7 @@ import GlobalTheme from '@src/global/styles/theme';
 
 import { StatusBar } from 'expo-status-bar';
 import Home from '@src/screens/Home';
+import CarDetail from '@src/screens/CarDetail';
 
 import { useState, useEffect, useCallback } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
