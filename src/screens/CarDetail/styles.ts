@@ -14,7 +14,6 @@ export const Container = styled.View`
 `;
 
 export const ImageContainer = styled.View`
-  border: solid 1px ${({ theme }) => theme.colors.red};
   margin-bottom: ${RFValue(7)}px;
 `;
 
@@ -24,8 +23,7 @@ export const CarImage = styled.Image`
 `;
 
 export const BrandName = styled.Text`
-  text-align: center;
-  text-transform: uppercase;
+  text-align: center; text-transform: uppercase;
   margin: ${RFValue(10)}px 0;
   font-family: ${({ theme }) => theme.fonts.medium};
   font-size: ${RFValue(20)}px;
@@ -41,7 +39,6 @@ export const CarName = styled.Text<TextProps>`
 `
 
 export const SpecificationContainer = styled.View`
-  border: solid 1px ${({ theme }) => theme.colors.red};
   height: ${RFValue(180)}px;
   width: 100%;
 `;
@@ -61,8 +58,11 @@ export const Title = styled.Text<TextProps>`
 `
 
 export const AcessoriesContainer = styled.View`
-  border: solid 1px ${({ theme }) => theme.colors.red};
-  height: ${RFValue(75)}px;
+  height: ${RFValue(120)}px;
+  width: 100%;
+`;
+
+export const AcessItems = styled.View`
   width: 100%;
 `;
 
@@ -72,7 +72,7 @@ export const NoAcessoriesContainer = styled.View`
 `;
 
 export const FooterContainer = styled.View`
-  border: solid 1px ${({ theme }) => theme.colors.red};
+  margin-bottom: ${RFValue(120)}px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

@@ -1,3 +1,4 @@
+import { AcessorieItem } from '@src/components/AcessoriesList';
 import { EditButton } from '@src/components/Button';
 import { SpecificationCard } from '@src/components/Card/SpecificationCard';
 import { DetailHeader } from '@src/components/Header';
@@ -17,6 +18,7 @@ import {
   PriceTitle,
   FooterContainer,
   Cards,
+  AcessItems,
 } from './styles'
 
 export default function CarDetail() {
@@ -36,18 +38,28 @@ export default function CarDetail() {
 
         <SpecificationContainer>
           <Title align='left'>Especificações</Title>
-          <Cards>
+          <Cards showsHorizontalScrollIndicator={false} bounces={false}>
             <ScrollView horizontal={true}>
               <SpecificationCard name='Cor' iconName='format-color-fill' value='Branco' />
               <SpecificationCard name='Combustível' iconName='fuel' value='Diesel' />
-              <SpecificationCard name='Tipo' iconName='color' value='' />
-              <SpecificationCard name='Transmissão' iconName='color' value='Branco' />
+              <SpecificationCard name='Tipo' iconName='car' value='Pickup' />
+              <SpecificationCard name='Transmissão' iconName='cog' value='Auto' />
             </ScrollView>
           </Cards>
         </SpecificationContainer>
 
         <AcessoriesContainer>
           <Title align='left'>Acessórios</Title>
+          <AcessItems>
+            <AcessorieItem
+              acessorieName='Ar Condicionado'
+              price={2700}
+            />
+            <AcessorieItem
+              acessorieName='Ar Condicionado'
+              price={2700}
+            />
+          </AcessItems>
         </AcessoriesContainer>
 
         <FooterContainer>
