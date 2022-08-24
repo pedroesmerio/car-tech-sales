@@ -5,11 +5,7 @@ import { Container, EditButtonContainer, Title } from './styles'
 type ButtonProps = {
   name: string;
   type: 'add' | 'save';
-}
-
-type EditButtonProps = {
-  name: string;
-  type: 'add' | 'edit';
+  onPress: () => void;
 }
 
 export function Button({ name, type }: ButtonProps) {
@@ -18,6 +14,11 @@ export function Button({ name, type }: ButtonProps) {
       <Title>{name}</Title>
     </Container>
   );
+}
+
+type EditButtonProps = {
+  name: string;
+  type: 'add' | 'edit';
 }
 
 export function EditButton({ name, type }: EditButtonProps) {
