@@ -5,8 +5,6 @@ import { ThemeProvider } from 'styled-components/native';
 import GlobalTheme from '@src/global/styles/theme';
 
 import { StatusBar } from 'expo-status-bar';
-import Home from '@src/screens/Home';
-import CarDetail from '@src/screens/CarDetail';
 
 import { useState, useEffect, useCallback } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
@@ -16,6 +14,8 @@ import {
   Roboto_500Medium,
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto'
+import { Routes } from '@src/routes';
+import CarRegister from '@src/screens/CarRegister';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false)
@@ -53,7 +53,7 @@ export default function App() {
     <View onLayout={onLayout} style={styles.container}>
       <ThemeProvider theme={GlobalTheme}>
         <StatusBar style="inverted" />
-        <Home />
+        <CarRegister />
       </ThemeProvider>
     </View>
   );

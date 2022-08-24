@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import { Header } from '@src/components/Header'
 
@@ -11,10 +12,14 @@ import { FlatList } from 'react-native'
 import { Card } from '@src/components/Card'
 
 export default function Home() {
+  const navigation = useNavigation();
+
+
   return (
     <>
       <Header />
       <Container>
+        <Button name='Ver Carro' type='add' onPress={() => navigation.navigate('carDetail')} />
 
         <FlatList
           data={carList}
@@ -30,6 +35,7 @@ export default function Home() {
               type={item.type}
               basePrice={item.basePrice}
               imgUrl={item.imgUrl}
+              onPress={() => navigation.navigate('carDetail', { key: item.key })}
             />
           )}
           style={{ flex: 1, width: '100%' }}
@@ -39,7 +45,7 @@ export default function Home() {
               <Title>
                 Nenhum carro encontrado
               </Title>
-              <Button name='ADICIONAR' type='add' />
+              <Button name='ADICIONAR' type='add' onPress={() => navigation.navigate('carRegister')} />
             </NoCarContainer>
           )}
         />
