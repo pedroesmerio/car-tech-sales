@@ -1,6 +1,8 @@
 import { EditButton } from '@src/components/Button';
+import { SpecificationCard } from '@src/components/Card/SpecificationCard';
 import { DetailHeader } from '@src/components/Header';
 import React from 'react'
+import { ScrollView } from 'react-native';
 
 import {
   Container,
@@ -14,6 +16,7 @@ import {
   AcessoriesContainer,
   PriceTitle,
   FooterContainer,
+  Cards,
 } from './styles'
 
 export default function CarDetail() {
@@ -33,6 +36,14 @@ export default function CarDetail() {
 
         <SpecificationContainer>
           <Title align='left'>Especificações</Title>
+          <Cards>
+            <ScrollView horizontal={true}>
+              <SpecificationCard name='Cor' iconName='format-color-fill' value='Branco' />
+              <SpecificationCard name='Combustível' iconName='fuel' value='Diesel' />
+              <SpecificationCard name='Tipo' iconName='color' value='' />
+              <SpecificationCard name='Transmissão' iconName='color' value='Branco' />
+            </ScrollView>
+          </Cards>
         </SpecificationContainer>
 
         <AcessoriesContainer>

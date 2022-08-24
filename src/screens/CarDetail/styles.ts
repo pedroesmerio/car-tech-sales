@@ -19,7 +19,7 @@ export const ImageContainer = styled.View`
 `;
 
 export const CarImage = styled.Image`
-  height: ${RFValue(191)}px;
+  height: ${RFValue(141)}px;
   width: ${RFValue(338)}px;
 `;
 
@@ -42,7 +42,12 @@ export const CarName = styled.Text<TextProps>`
 
 export const SpecificationContainer = styled.View`
   border: solid 1px ${({ theme }) => theme.colors.red};
-  height: ${RFValue(110)}px;
+  height: ${RFValue(180)}px;
+  width: 100%;
+`;
+
+export const Cards = styled.ScrollView`
+  flex-direction: row;
   width: 100%;
 `;
 
