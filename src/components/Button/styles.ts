@@ -12,7 +12,7 @@ export const Container = styled.View<ContainerProps>`
   width: 100%;
 
   height: ${RFValue(57)}px;
-  margin: ${RFValue(20)}px;
+  margin: ${RFValue(20)}px 0;
 
   justify-content: center;
   align-items: center;
