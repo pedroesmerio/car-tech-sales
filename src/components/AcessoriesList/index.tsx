@@ -18,7 +18,7 @@ export function AcessorieItem(props: AcessorieProps) {
   return (
     <ItemContainer>
       <NameView>
-        <FeatherIcon name='trash' />
+        <FeatherIcon name='trash' onPress={() => console.log('Apagou o acessório')} />
         <Title align='left' color='offWhite'>{props.acessorieName}</Title>
       </NameView>
       <PriceView>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import { Header } from '@src/components/Header'
 
@@ -10,8 +11,6 @@ import { Button } from '@src/components/Button'
 import { FlatList } from 'react-native'
 import { Card } from '@src/components/Card'
 
-import { useNavigation } from '@react-navigation/native';
-
 export default function Home() {
   const navigation = useNavigation();
 
@@ -19,7 +18,6 @@ export default function Home() {
     <>
       <Header />
       <Container>
-
         <FlatList
           data={carList}
           keyExtractor={(item) => item.key}
@@ -47,7 +45,7 @@ export default function Home() {
               <Button
                 name='ADICIONAR'
                 type='add'
-                onPress={() => navigation.navigate('carDetail')}
+                onPress={() => navigation.navigate('carRegister')}
               />
             </NoCarContainer>
           )}
