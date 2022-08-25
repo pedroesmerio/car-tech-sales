@@ -32,15 +32,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 export default function CarRegister() {
   const [transmissionType, setTransmissionType] = useState('');
+
   const [newRegister, setNewRegister] = useState({
     key: '',
     name: '',
     brand: '',
-    year: '',
-    transmission: '',
-    fuel: '',
+    year: {},
+    transmission: {},
+    fuel: {},
     type: '',
-    basePrice: '',
+    basePrice: {},
     imgUrl: '',
     acessoriesItems: [{}]
   })
@@ -49,6 +50,7 @@ export default function CarRegister() {
     setTransmissionType(type);
   }
 
+  //Todo: Verifications
   const schema = Yup.object().shape({
     key: Yup
       .string(),
@@ -65,7 +67,7 @@ export default function CarRegister() {
     type: Yup
       .string(),
     basePrice: Yup
-      .string(),
+      .number(),
     imgUrl: Yup
       .string(),
   });
