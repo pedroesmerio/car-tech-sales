@@ -1,17 +1,16 @@
 import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
-type ContainerProps = {
+interface ContainerProps extends TouchableOpacityProps {
   type: 'add' | 'save'
+  onPress: () => void;
 }
 
-type EditButtonContainerProps = {
-  type: 'add' | 'save'
-}
-export const Container = styled.View<ContainerProps>`
+export const Container = styled(TouchableOpacity) <ContainerProps>`
   width: 100%;
-
   height: ${RFValue(57)}px;
+
   margin: ${RFValue(20)}px 0;
 
   justify-content: center;
@@ -30,12 +29,19 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.medium};
 `
 
-export const EditButtonContainer = styled.View<EditButtonContainerProps>`
+interface EditButtonContainerProps extends TouchableOpacity {
+  type: 'add' | 'save'
+  onPress: () => void;
+}
+
+export const EditButtonContainer = styled(TouchableOpacity) <EditButtonContainerProps>`
   flex: 1;
   flex-direction: row;
-  margin-left: ${RFValue(10)}px;
 
   height: ${RFValue(57)}px;
+
+  margin-left: ${RFValue(10)}px;
+
 
   justify-content: center;
   align-items: center;

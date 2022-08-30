@@ -18,8 +18,6 @@ export default function Home() {
     <>
       <Header />
       <Container>
-        <Button name='Ver Carro' type='add' onPress={() => navigation.navigate('carDetail')} />
-
         <FlatList
           data={carList}
           keyExtractor={(item) => item.key}
@@ -47,7 +45,7 @@ export default function Home() {
               <Button
                 name='ADICIONAR'
                 type='add'
-                onPress={() => navigation.navigate('carDetail')}
+                onPress={() => navigation.navigate('carRegister')}
               />
             </NoCarContainer>
           )}
