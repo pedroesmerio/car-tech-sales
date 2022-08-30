@@ -6,6 +6,8 @@ import GlobalTheme from '@src/global/styles/theme';
 
 import { StatusBar } from 'expo-status-bar';
 
+import { Routes } from '@src/routes';
+
 import { useState, useEffect, useCallback } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
@@ -53,7 +55,7 @@ export default function App() {
     <View onLayout={onLayout} style={styles.container}>
       <ThemeProvider theme={GlobalTheme}>
         <StatusBar style="inverted" />
-        <CarRegister />
+        <Routes />
       </ThemeProvider>
     </View>
   );

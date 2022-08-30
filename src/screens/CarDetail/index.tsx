@@ -1,8 +1,9 @@
+import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+
 import { AcessorieItem } from '@src/components/AcessoriesList';
 import { EditButton } from '@src/components/Button';
 import { SpecificationCard } from '@src/components/Card/SpecificationCard';
-import { DetailHeader } from '@src/components/Header';
-import React from 'react'
 import { ScrollView } from 'react-native';
 
 import {
@@ -22,11 +23,11 @@ import {
 } from './styles'
 
 export default function CarDetail() {
+  const navigation = useNavigation();
 
   return (
     <>
       <Container>
-        <DetailHeader title='Detalhes do Carro' />
         <ImageContainer>
           <CarImage
             source={{ uri: `https://raw.githubusercontent.com/pedroesmerio/car-tech-sales/main/src/assets/cars/pickup.png` }}
@@ -67,7 +68,7 @@ export default function CarDetail() {
             <Title align='left'>R$ 230.980</Title>
             <PriceTitle align='left'>Preço</PriceTitle>
           </PriceContainer>
-          <EditButton name='EDITAR' type='edit' />
+          <EditButton name='EDITAR' type='edit' onPress={() => navigation.navigate('carRegister')} />
         </FooterContainer>
       </Container>
     </>

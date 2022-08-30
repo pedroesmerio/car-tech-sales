@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize'
 import Icon from 'react-native-vector-icons/Feather'
+import { TouchableOpacityProps } from 'react-native';
 
 type TitleProps = {
   align: 'left' | 'right';
@@ -41,7 +42,7 @@ export const Title = styled.Text<TitleProps>`
   color: ${({ theme }) => theme.colors.offWhite};
 `
 
-export const FeatherIcon = styled(Icon)`
+export const FeatherIcon = styled(Icon) <TouchableOpacityProps>`
   margin-right: 10px;
   font-size: ${RFValue(24)}px;
   color: ${({ theme }) => theme.colors.red};

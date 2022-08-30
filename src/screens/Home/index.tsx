@@ -14,13 +14,10 @@ import { Card } from '@src/components/Card'
 export default function Home() {
   const navigation = useNavigation();
 
-
   return (
     <>
       <Header />
       <Container>
-        <Button name='Ver Carro' type='add' onPress={() => navigation.navigate('carDetail')} />
-
         <FlatList
           data={carList}
           keyExtractor={(item) => item.key}
@@ -45,7 +42,11 @@ export default function Home() {
               <Title>
                 Nenhum carro encontrado
               </Title>
-              <Button name='ADICIONAR' type='add' onPress={() => navigation.navigate('carRegister')} />
+              <Button
+                name='ADICIONAR'
+                type='add'
+                onPress={() => navigation.navigate('carRegister')}
+              />
             </NoCarContainer>
           )}
         />
