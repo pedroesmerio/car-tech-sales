@@ -21,12 +21,18 @@ export function Button({
   );
 }
 
-type EditButtonProps = {
+interface EditButtonProps extends TouchableOpacityProps {
   name: string;
   type: 'add' | 'edit';
+  onPress: () => void;
 }
 
-export function EditButton({ name, type }: EditButtonProps) {
+export function EditButton({
+  name,
+  type,
+  onPress,
+  ...rest
+}: EditButtonProps) {
   return (
     <EditButtonContainer type={type} onPress={onPress} {...rest}>
       <Title>{name}</Title>

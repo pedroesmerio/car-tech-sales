@@ -16,8 +16,6 @@ import {
   Roboto_500Medium,
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto'
-import { Routes } from '@src/routes';
-import CarRegister from '@src/screens/CarRegister';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false)
