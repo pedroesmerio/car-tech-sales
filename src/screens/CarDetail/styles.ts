@@ -58,21 +58,24 @@ export const Title = styled.Text<TextProps>`
 `
 
 export const AcessoriesContainer = styled.View`
-  height: ${RFValue(120)}px;
+  margin-top: ${RFValue(10)}px;
+  height: ${RFValue(100)}px;
   width: 100%;
 `;
 
 export const AcessItems = styled.View`
+  height: ${RFValue(100)}px;
   width: 100%;
 `;
 
 export const NoAcessoriesContainer = styled.View`
-  height: ${RFValue(18)}px;
+  height: ${RFValue(100)}px;
   width: 100%;
 `;
 
 export const FooterContainer = styled.View`
-  margin-bottom: ${RFValue(120)}px;
+  margin-bottom: ${RFValue(20)}px;
+  margin-top: ${RFValue(10)}px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

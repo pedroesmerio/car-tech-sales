@@ -13,16 +13,19 @@ type AcessorieProps = {
   price: number;
 }
 
-export function AcessorieItem(props: AcessorieProps) {
+export function AcessorieItem({
+  acessorieName,
+  price
+}: AcessorieProps) {
 
   return (
     <ItemContainer>
       <NameView>
         <FeatherIcon name='trash' onPress={() => console.log('Apagou o acessório')} />
-        <Title align='left' color='offWhite'>{props.acessorieName}</Title>
+        <Title align='left' color='offWhite'>{acessorieName}</Title>
       </NameView>
       <PriceView>
-        <Title align='left' color=''>R$ {props.price},00</Title>
+        <Title align='left' color=''>R$ {price},00</Title>
       </PriceView>
     </ItemContainer>
   );

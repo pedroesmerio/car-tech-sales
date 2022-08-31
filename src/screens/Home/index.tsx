@@ -20,10 +20,10 @@ export default function Home() {
       <Container>
         <FlatList
           data={carList}
-          keyExtractor={(item) => item.key}
+          keyExtractor={(item) => item.idMobile}
           renderItem={({ item }) => (
             <Card
-              key={item.key}
+              key={item.idMobile}
               name={item.name}
               brand={item.brand}
               year={item.year}
