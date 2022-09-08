@@ -20,7 +20,7 @@ export const ItemContainer = styled.View`
 
 export const NameView = styled.View`
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   height: ${RFValue(24)}px;
 `;
 
