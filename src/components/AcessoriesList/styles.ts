@@ -12,20 +12,18 @@ export const ItemContainer = styled.View`
   flex-direction: row;
   width: 100%;
   height: 24px;
-
   padding-top: 10px;
-
+  margin-top: 10px;
   align-items: center;
   justify-content: space-between;
-
-  margin-top: 10px;
 `;
 
 export const NameView = styled.View`
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   height: ${RFValue(24)}px;
 `;
+
 export const PriceView = styled.View`
   align-items: baseline;
   height: ${RFValue(24)}px;

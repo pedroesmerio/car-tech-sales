@@ -1,6 +1,6 @@
 export const carList = [
   {
-    key: '0',
+    idMobile: '0',
     name: 'RAV4',
     brand: 'Toyota',
     year: 2022,
@@ -11,19 +11,19 @@ export const carList = [
     imgUrl: 'hatch.png',
     acessoriesItems: [
       {
-        id: '0',
+        idMobile: '0',
         acessorieName: 'Ar condicionado',
-        price: 2700
+        acessoriePrice: 2700
       },
       {
-        id: '1',
+        idMobile: '1',
         acessorieName: 'Multimedia',
-        price: 3400
+        acessoriePrice: 3400
       },
     ]
   },
   {
-    key: '1',
+    idMobile: '1',
     name: 'Golf',
     brand: 'Volks',
     year: 2022,
@@ -34,19 +34,19 @@ export const carList = [
     imgUrl: 'coupe.png',
     acessoriesItems: [
       {
-        id: '0',
+        idMobile: '0',
         acessorieName: 'Ar condicionado',
-        price: 2700
+        acessoriePrice: 2700
       },
       {
-        id: '1',
+        idMobile: '1',
         acessorieName: 'Multimedia',
-        price: 3400
+        acessoriePrice: 3400
       },
     ]
   },
   {
-    key: '2',
+    idMobile: '2',
     name: 'Mobi',
     brand: 'FIAT',
     year: 2022,
@@ -57,19 +57,19 @@ export const carList = [
     imgUrl: 'compact.png',
     acessoriesItems: [
       {
-        id: '0',
+        idMobile: '0',
         acessorieName: 'Ar condicionado',
-        price: 2700
+        acessoriePrice: 2700
       },
       {
-        id: '1',
+        idMobile: '1',
         acessorieName: 'Multimedia',
-        price: 3400
+        acessoriePrice: 3400
       },
     ]
   },
   {
-    key: '3',
+    idMobile: '3',
     name: 'RS5',
     brand: 'AUDI',
     year: 2022,
@@ -80,19 +80,19 @@ export const carList = [
     imgUrl: 'sedan.png',
     acessoriesItems: [
       {
-        id: '0',
+        idMobile: '0',
         acessorieName: 'Ar condicionado',
-        price: 2700
+        acessoriePrice: 2700
       },
       {
-        id: '1',
+        idMobile: '1',
         acessorieName: 'Multimedia',
-        price: 3400
+        acessoriePrice: 3400
       },
     ]
   },
   {
-    key: '4',
+    idMobile: '4',
     name: 'Hilux',
     brand: 'Toyota',
     year: 2022,
@@ -103,14 +103,14 @@ export const carList = [
     imgUrl: 'pickup.png',
     acessoriesItems: [
       {
-        id: '0',
+        idMobile: '0',
         acessorieName: 'Ar condicionado',
-        price: 2700
+        acessoriePrice: 2700
       },
       {
-        id: '1',
+        idMobile: '1',
         acessorieName: 'Multimedia',
-        price: 3400
+        acessoriePrice: 3400
       },
     ]
   }
