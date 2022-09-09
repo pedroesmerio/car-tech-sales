@@ -9,52 +9,86 @@ interface ButtonProps {
 
 export const Container = styled.View`
   flex: 1;
-  padding: 0 ${RFValue(20)}px;
+  gap: 20px;
+  width: 100%;
+  padding: 10px ${RFValue(20)}px;
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Title = styled.Text`
-  margin-bottom: ${RFValue(340)}px;
-  margin-top: ${RFValue(95)}px;
-  font-weight: medium;
+  margin-top: 10px;
+  font-weight: bold;
   font-size: ${RFValue(20)}px;
-  color: ${({ theme }) => theme.colors.gray_medium};
-`;
-export const Form = styled.View`
-  flex: 1;
-  padding: ${RFValue(20)}px 0;
-`;
-
-export const DoubleInputContainer = styled.View`
-  flex-direction: row;
+  color: ${({ theme }) => theme.colors.dark};
 `;
 
 export const TransmissionContainer = styled.View`
   flex-direction: row;
-  align-items: center;
   justify-content: space-evenly;
   background-color: transparent;
 `;
 
-export const TransmissionTitle = styled.Text`
-  color: ${({ theme }) => theme.colors.dark};
-  font-weight: bold;
-  font-size: ${RFValue(20)}px;
-`;
-
 export const TransmissionButton = styled(TouchableOpacity) <ButtonProps>`
+  width: ${RFValue(124)}px;
+  height: ${RFValue(43)}px;
   padding: 10px;
-  color: ${({ isActive, theme }) =>
-    isActive === true ? theme.colors.secondary : theme.colors.gray};
   border: solid 2px
     ${({ isActive, theme }) =>
-    isActive === true ? theme.colors.secondary : theme.colors.gray};
+    isActive === true ? theme.colors.secondary : theme.colors.gray_medium};
   border-radius: 8px;
 `;
 
-export const ButtonText = styled.Text`
+export const ButtonText = styled.Text<ButtonProps>`
+  color: ${({ isActive, theme }) =>
+    isActive === true ? theme.colors.secondary : theme.colors.gray_medium};
+  text-align: center;
   font-weight: regular;
-  font-size: ${RFValue(14)} px;
+  font-size: ${RFValue(18)}px;
 `;
 
-export const ButtonContainer = styled.View``;
+export const ButtonContainer = styled.View`
+`;
+
+export const TypeContainer = styled.View`
+  margin-top: ${RFValue(10)}px;
+  height: ${RFValue(55)}px;
+  width: 100%;
+`;
+
+export const Types = styled.ScrollView`
+  flex-direction: row;
+`;
+
+export const TypeButtom = styled(TouchableOpacity) <ButtonProps> `
+  width: ${RFValue(124)}px;
+  height: ${RFValue(43)}px;
+  padding: 10px;
+  margin: 0 5px;
+  justify-content: center;
+  border: solid 2px
+    ${({ isActive, theme }) =>
+    isActive === true ? theme.colors.secondary : theme.colors.gray_medium};
+  border-radius: 8px;
+`;
+
+export const CombContainer = styled.View`
+  margin-top: ${RFValue(10)}px;
+  height: ${RFValue(55)}px;
+  width: 100%;
+`;
+
+export const Combs = styled.ScrollView`
+  flex-direction: row;
+`;
+
+export const CombButtom = styled(TouchableOpacity) <ButtonProps> `
+  width: ${RFValue(124)}px;
+  height: ${RFValue(43)}px;
+  padding: 10px;
+  margin: 0 5px;
+  justify-content: center;
+  border: solid 2px
+    ${({ isActive, theme }) =>
+    isActive === true ? theme.colors.secondary : theme.colors.gray_medium};
+  border-radius: 8px;
+`;

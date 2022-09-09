@@ -4,6 +4,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 export const Container = styled.View`
   justify-content: center;
   align-items: stretch;
+  margin-bottom: 20px;
 `;
 
 export const Error = styled.Text`

@@ -6,10 +6,10 @@ interface Props {
   active: boolean;
 }
 
-export const Container = styled(TextInput)<Props>`
+export const Container = styled(TextInput) <Props>`
   flex: 1;
   width: 100%;
-  padding: 16px 18px;
+  padding: 16px 15px;
   font-weight: regular;
   font-size: ${RFValue(14)}px;
   color: ${({ theme }) => theme.colors.dark};
