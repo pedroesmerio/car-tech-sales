@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native'
 
 import { Header } from '@src/components/Header'
 
-import { Container, NoCarContainer, Title } from './styles'
+import { AddCarButtom, Container, NoCarContainer, Title } from './styles'
 
 import { carList } from '@src/utils/carsList'
 
@@ -50,7 +50,10 @@ export default function Home() {
             </NoCarContainer>
           )}
         />
-
+        <AddCarButtom
+          onPress={() => navigation.navigate('carRegister')}
+        >
+        </AddCarButtom>
       </Container>
     </>
   )
