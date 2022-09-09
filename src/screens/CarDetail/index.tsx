@@ -65,10 +65,26 @@ export default function CarDetail() {
         <Title align='left' color='default'>Especificações</Title>
         <Cards showsHorizontalScrollIndicator={false} bounces={false}>
           <ScrollView horizontal={true}>
-            <SpecificationCard name='Cor' iconName='format-color-fill' value='Branco' />
-            <SpecificationCard name='Combustível' iconName='fuel' value='Diesel' />
-            <SpecificationCard name='Tipo' iconName='car' value='Pickup' />
-            <SpecificationCard name='Transmissão' iconName='cog' value='Auto' />
+            <SpecificationCard
+              name='Cor'
+              iconName='format-color-fill'
+              value='Branco'
+            />
+            <SpecificationCard
+              name='Combustível'
+              iconName='fuel'
+              value='Diesel'
+            />
+            <SpecificationCard
+              name='Tipo'
+              iconName='car'
+              value='Pickup'
+            />
+            <SpecificationCard
+              name='Transmissão'
+              iconName='cog'
+              value='Auto'
+            />
           </ScrollView>
         </Cards>
       </SpecificationContainer>

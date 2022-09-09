@@ -32,7 +32,7 @@ export default function Home() {
               type={item.type}
               basePrice={item.basePrice}
               imgUrl={item.imgUrl}
-              onPress={() => navigation.navigate('carDetail', { key: item.key })}
+              onPress={() => navigation.navigate('carDetail', { id: item.idMobile })}
             />
           )}
           style={{ flex: 1, width: '100%' }}
