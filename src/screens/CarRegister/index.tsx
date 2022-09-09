@@ -109,7 +109,7 @@ export default function CarRegister() {
         name="year"
         control={control}
         placeholder="Ano"
-        keyboardType='numeric'
+        keyboardType='number-pad'
         autoCapitalize="sentences"
         autoCorrect={false}
       />
@@ -136,7 +136,7 @@ export default function CarRegister() {
         name="basePrice"
         control={control}
         placeholder="Preço"
-        keyboardType='numeric'
+        keyboardType='number-pad'
         autoCapitalize="sentences"
         autoCorrect={false}
       />
