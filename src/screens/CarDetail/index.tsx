@@ -26,9 +26,28 @@ import {
   TitleContainer,
   ModalContainer,
   ModalPriceContainer,
+  AcessorieTypeContainer,
+  Acess,
+  AddAcessButtom,
+  ButtonText,
 } from './styles'
 
 import { carList } from '@src/utils/carsList'
+import { InputForm } from '@src/components/Form/InputForm';
+import { useForm } from 'react-hook-form';
+
+import * as Yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup';
+
+const schema = Yup.object().shape({
+  idMobile: Yup
+    .string().required(),
+  name: Yup
+    .string().required(),
+  year: Yup
+    .number().required().min(4).max(4).integer(),
+});
+
 
 export default function CarDetail() {
   const navigation = useNavigation();
@@ -49,6 +68,9 @@ export default function CarDetail() {
     setIsSheetOpen(false);
   }, []);
 
+  const { control, handleSubmit } = useForm({
+    resolver: yupResolver(schema)
+  });
 
   return (
     <Container>
@@ -150,11 +172,71 @@ export default function CarDetail() {
             Novo acessório
           </Title>
 
+          <AcessorieTypeContainer>
+            <Acess
+              showsHorizontalScrollIndicator={false}
+              bounces={false}
+            >
+              <ScrollView horizontal={true}>
+                <AddAcessButtom
+                  key={1}
+                  isActive={false}
+                  onPress={() => console.log('AR Cond.>')}
+                >
+                  <ButtonText isActive={false}>AR Cond.</ButtonText>
+                </AddAcessButtom>
+                <AddAcessButtom
+                  key={2}
+                  isActive={true}
+                  onPress={() => console.log('SOM')}
+                >
+                  <ButtonText isActive={true}>SOM</ButtonText>
+                </AddAcessButtom>
+                <AddAcessButtom
+                  key={3}
+                  isActive={false}
+                  onPress={() => console.log('GPS')}
+                >
+                  <ButtonText isActive={false}>GPS</ButtonText>
+                </AddAcessButtom>
+                <AddAcessButtom
+                  key={4}
+                  isActive={false}
+                  onPress={() => console.log('MULT')}
+                >
+                  <ButtonText isActive={false}>MULT.</ButtonText>
+                </AddAcessButtom>
+                <AddAcessButtom
+                  key={5}
+                  isActive={false}
+                  onPress={() => console.log('LOCKER')}
+                >
+                  <ButtonText isActive={false}>LOCKER</ButtonText>
+                </AddAcessButtom>
+                <AddAcessButtom
+                  key={6}
+                  isActive={false}
+                  onPress={() => console.log('ALARM')}
+                >
+                  <ButtonText isActive={false}>ALARM</ButtonText>
+                </AddAcessButtom>
+              </ScrollView>
+            </Acess>
+          </AcessorieTypeContainer>
           <Title align='left' color='dark'>
             Preço
           </Title>
 
           <ModalPriceContainer>
+            <InputForm
+              name="price"
+              control={control}
+              placeholder="Digite o preço do item"
+              keyboardType='number-pad'
+              autoCapitalize="characters"
+              autoCorrect={false}
+            />
+
             <Button
               name='Editar'
               type='save'
