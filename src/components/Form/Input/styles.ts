@@ -7,7 +7,8 @@ interface Props {
 }
 
 export const Container = styled(TextInput) <Props>`
-  width: 100%;
+  flex: 1;
+  width:100%;
   padding: 16px 18px;
 
   font-family: ${({ theme }) => theme.fonts.regular};
@@ -16,11 +17,4 @@ export const Container = styled(TextInput) <Props>`
   color: ${({ theme }) => theme.colors.dark};
   border: solid 1px ${({ theme }) => theme.colors.gray_medium};
   border-radius: 5px; 
-
-  margin-bottom: 8px;
-
-  ${({ active, theme }) => active && css`
-    border-width: 3px;
-    border-color: ${theme.colors.red};        
-  `};
 `;

@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 
 import { Button } from '@src/components/Button'
 import { InputForm } from '@src/components/Form/InputForm'
-import { TransmissionTypeButton } from '@src/components/Form/TransmissionTypeButton'
-
 import {
   ButtonContainer,
+  ButtonText,
   Container,
   DoubleInputContainer,
   Form,
-  TransmissionTypes
+  Title,
+  TransmissionButton,
+  TransmissionContainer,
+  TransmissionTitle,
 } from './styles'
 
 type FormDataProps = {
@@ -56,8 +58,6 @@ const schema = Yup.object().shape({
 import { useForm } from 'react-hook-form';
 
 export default function CarRegister() {
-  const [transmissionType, setTransmissionType] = useState<number>(0);
-
   const [newRegister, setNewRegister] = useState<FormDataProps>({
     idMobile: '',
     name: '',
@@ -87,7 +87,7 @@ export default function CarRegister() {
       year: form.year,
       type: form.type,
       basePrice: form.basePrice,
-      transmission: transmissionType,
+      transmission: 0,
       brand: form.brand,
       fuel: form.fuel,
       model: form.model,
@@ -103,6 +103,7 @@ export default function CarRegister() {
       <Form>
         <InputForm
           name="name"
+          title="Nome"
           control={control}
           placeholder="Nome"
           keyboardType='default'
@@ -112,6 +113,7 @@ export default function CarRegister() {
         <DoubleInputContainer>
           <InputForm
             name="year"
+            title="Ano"
             control={control}
             placeholder="Ano"
             keyboardType='numeric'
@@ -120,6 +122,7 @@ export default function CarRegister() {
           />
           <InputForm
             name="color"
+            title="Cor"
             control={control}
             placeholder="Cor"
             keyboardType='default'
@@ -130,6 +133,7 @@ export default function CarRegister() {
         <DoubleInputContainer>
           <InputForm
             name="brand"
+            title="Marca"
             control={control}
             placeholder="Marca"
             keyboardType='default'
@@ -138,6 +142,7 @@ export default function CarRegister() {
           />
           <InputForm
             name="basePrice"
+            title="Preço"
             control={control}
             placeholder="Preço"
             keyboardType='numeric'
@@ -146,12 +151,15 @@ export default function CarRegister() {
           />
         </DoubleInputContainer>
 
-        {/* <TransmissionTypes> */}
-        {/*   <TransmissionTypeButton */}
-        {/*     type={1} */}
-        {/*     onPress={setTransmissionType(1)} */}
-        {/*   /> */}
-        {/* </TransmissionTypes> */}
+        <TransmissionTitle>Transmissão</TransmissionTitle>
+        <TransmissionContainer>
+          <TransmissionButton isActive={true} onPress={() => console.log('apertou')}>
+            <ButtonText>Automático</ButtonText>
+          </TransmissionButton>
+          <TransmissionButton isActive={false} onPress={() => console.log('apertou')}>
+            <ButtonText>Automático</ButtonText>
+          </TransmissionButton>
+        </TransmissionContainer>
 
         <ButtonContainer>
           <Button

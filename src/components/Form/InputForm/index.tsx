@@ -8,15 +8,17 @@ import { Container } from './styles';
 import { Title } from './styles';
 
 interface Props extends TextInputProps {
+  name: string;
+  title: string;
   placeholder: string;
   control: Control;
-  name: string;
 }
 
 export function InputForm({
-  control,
   name,
+  title,
   placeholder,
+  control,
   ...rest
 }: Props) {
   return (
@@ -25,10 +27,11 @@ export function InputForm({
         control={control}
         render={({ field: { onChange, value } }) => (
           <>
-            <Title>{placeholder}</Title>
+            <Title>{title}</Title>
             <Input
               onChangeText={onChange}
               value={value}
+              placeholder={placeholder}
               {...rest}
             />
           </>
