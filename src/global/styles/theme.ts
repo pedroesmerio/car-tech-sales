@@ -17,11 +17,5 @@ export default {
     offWhite: "#DEDEDE",
 
     background: "#F4F5F6",
-  },
-
-  fonts: {
-    regular: "Roboto_400Regular",
-    medium: "Roboto_500Medium",
-    bold: "Roboto_700Bold",
-  },
+  }
 }

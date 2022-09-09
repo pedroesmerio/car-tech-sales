@@ -1,21 +1,20 @@
-import styled from 'styled-components/native';
-import { RFValue } from 'react-native-responsive-fontsize'
+import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 type TextProps = {
-  align: 'left' | 'center' | 'right';
-}
+  align: "left" | "center" | "right";
+};
 
 export const Container = styled.View`
-  background-color: ${({ theme }) => theme.colors.background}
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Title = styled.Text<TextProps>`
   text-align: ${({ align }) =>
-    align === 'left' && 'left' ||
-    align === 'center' && 'center' ||
-    align === 'right' && 'right'
-  };
-  font-family: ${({ theme }) => theme.fonts.medium};
+    (align === "left" && "left") ||
+    (align === "center" && "center") ||
+    (align === "right" && "right")};
+  font-weight: medium;
   font-size: ${RFValue(20)}px;
   color: ${({ theme }) => theme.colors.dark};
 `;

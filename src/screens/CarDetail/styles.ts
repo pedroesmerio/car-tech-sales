@@ -1,10 +1,10 @@
-import styled from 'styled-components/native';
-import { RFValue } from 'react-native-responsive-fontsize'
-import { TouchableOpacityProps } from 'react-native';
+import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
+import { TouchableOpacityProps } from "react-native";
 
 interface TextProps extends TouchableOpacityProps {
-  align: 'left' | 'center' | 'right';
-  color: 'default' | 'blue' | 'dark';
+  align: "left" | "center" | "right";
+  color: "default" | "blue" | "dark";
   size: number;
   onPress: () => void;
 }
@@ -28,20 +28,19 @@ export const CarImage = styled.Image`
 `;
 
 export const BrandName = styled.Text`
-  text-align: center; text-transform: uppercase;
+  text-align: center;
+  text-transform: uppercase;
   margin: ${RFValue(10)}px 0;
-  font-family: ${({ theme }) => theme.fonts.medium};
+  font-weight: medium;
   font-size: ${RFValue(20)}px;
   color: ${({ theme }) => theme.colors.gray_medium};
-`
+`;
 export const CarName = styled.Text<TextProps>`
-  text-align: ${({ align }) =>
-    align === 'left' ? align : 'center'
-  };
-  font-family: ${({ theme }) => theme.fonts.bold};
+  text-align: ${({ align }) => (align === "left" ? align : "center")};
+  font-weight: bold;
   font-size: ${RFValue(20)}px;
   color: ${({ theme }) => theme.colors.gray_light};
-`
+`;
 
 export const SpecificationContainer = styled.View`
   height: ${RFValue(180)}px;
@@ -55,19 +54,17 @@ export const Cards = styled.ScrollView`
 
 export const Title = styled.Text<TextProps>`
   text-align: ${({ align }) =>
-    align === 'left' && 'left' ||
-    align === 'center' && 'center' ||
-    align === 'right' && 'right'
-  };
-  font-family: ${({ theme }) => theme.fonts.bold};
-  font-size: ${({ size }) => size ? `${size}px` : `${RFValue(20)}px`};
+    (align === "left" && "left") ||
+    (align === "center" && "center") ||
+    (align === "right" && "right")};
+  font-weight: bold;
+  font-size: ${({ size }) => (size ? `${size}px` : `${RFValue(20)}px`)};
 
   color: ${({ theme, color }) =>
-    color === 'default' && theme.colors.offWhite ||
-    color === 'blue' && theme.colors.primary ||
-    color === 'dark' && theme.colors.dark
-  };
-`
+    (color === "default" && theme.colors.offWhite) ||
+    (color === "blue" && theme.colors.primary) ||
+    (color === "dark" && theme.colors.dark)};
+`;
 
 export const AcessoriesContainer = styled.View`
   margin-top: ${RFValue(10)}px;
@@ -106,10 +103,8 @@ export const PriceContainer = styled.View`
 `;
 
 export const PriceTitle = styled.Text<TextProps>`
-  text-align: ${({ align }) =>
-    align === 'left' ? align : 'center'
-  };
-  font-family: ${({ theme }) => theme.fonts.medium};
+  text-align: ${({ align }) => (align === "left" ? align : "center")};
+  font-weight: medium;
   font-size: ${RFValue(20)}px;
   color: ${({ theme }) => theme.colors.gray_medium};
 `;

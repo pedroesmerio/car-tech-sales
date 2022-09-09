@@ -1,12 +1,12 @@
-import styled from 'styled-components/native';
-import { RFValue } from 'react-native-responsive-fontsize'
-import Icon from 'react-native-vector-icons/Feather'
-import { TouchableOpacityProps } from 'react-native';
+import styled from "styled-components/native";
+import { RFValue } from "react-native-responsive-fontsize";
+import Icon from "react-native-vector-icons/Feather";
+import { TouchableOpacityProps } from "react-native";
 
 type TitleProps = {
-  align: 'left' | 'right';
-  color: 'offWhite' | 'gray_medium'
-}
+  align: "left" | "right";
+  color: "offWhite" | "gray_medium";
+};
 
 export const ItemContainer = styled.View`
   flex-direction: row;
@@ -30,17 +30,13 @@ export const PriceView = styled.View`
 `;
 
 export const Title = styled.Text<TitleProps>`
-  text-align: ${({ align }) =>
-    align === 'left' ? align : 'right'
-  };
-
-  font-family: ${({ theme }) => theme.fonts.bold};
+  text-align: ${({ align }) => (align === "left" ? align : "right")};
+  font-weight: bold;
   font-size: ${RFValue(14)}px;
-
   color: ${({ theme }) => theme.colors.offWhite};
-`
+`;
 
-export const FeatherIcon = styled(Icon) <TouchableOpacityProps>`
+export const FeatherIcon = styled(Icon)<TouchableOpacityProps>`
   margin-right: 10px;
   font-size: ${RFValue(24)}px;
   color: ${({ theme }) => theme.colors.red};
