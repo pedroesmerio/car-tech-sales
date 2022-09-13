@@ -1,9 +1,17 @@
-import Realm from "realm";
+import { createRealmContext } from "@realm/react";
+
 import { AccessoriesSchema } from "./Schema/AcessoriesSchema";
 import { CarSchema } from "./Schema/CarSchema";
 
-export const getRealm = async () => await Realm.open({
-  path: "decode-app",
+const config = {
+  path: "car-tech-sales",
   schema: [CarSchema, AccessoriesSchema],
   schemaVersion: 3
-});
+}
+
+export const {
+  RealmProvider,
+  useRealm,
+  useQuery,
+  useObject
+} = createRealmContext(config);
