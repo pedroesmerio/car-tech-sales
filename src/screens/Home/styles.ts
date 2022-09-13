@@ -35,6 +35,6 @@ export const AddCarButtom = styled(TouchableOpacity) <ButtonProps>`
   position: absolute;
   right: 20px;
   bottom: 20px;
-  border-radius: 50%;
+  border-radius: 40px;
   background-color: ${({ theme }) => theme.colors.secondary};
 `;
