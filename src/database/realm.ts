@@ -1,17 +1,13 @@
 import { createRealmContext } from "@realm/react";
 
-import { AccessoriesSchema } from "./Schema/AcessoriesSchema";
+import { AcessoriesSchema } from "./Schema/AcessoriesSchema";
 import { CarSchema } from "./Schema/CarSchema";
 
 const config = {
   path: "car-tech-sales",
-  schema: [CarSchema, AccessoriesSchema],
-  schemaVersion: 3
-}
+  schema: [CarSchema, AcessoriesSchema],
+  schemaVersion: 7,
+};
 
-export const {
-  RealmProvider,
-  useRealm,
-  useQuery,
-  useObject
-} = createRealmContext(config);
+export const { RealmProvider, useRealm, useQuery, useObject } =
+  createRealmContext(config);

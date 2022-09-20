@@ -1,17 +1,19 @@
 import { Realm } from "@realm/react";
 
-export class AccessoriesSchema extends Realm.Object {
+export class AcessoriesSchema extends Realm.Object {
   static schema = {
-    name: "AccessoriesTable",
+    name: "AcessoriesTable",
     properties: {
       IdMobile: { type: 'string' },
-      Accessorie: { type: 'int' },
+      Acessorie: { type: 'int' },
       Price: { type: 'double' },
+      Date: { type: 'date' },
     },
     primaryKey: "IdMobile",
   }
 
-  public IdMobile: 'string';
-  public Accessorie: 'int';
-  public Price: 'double';
+  public IdMobile: string;
+  public Acessorie: number;
+  public Price: number;
+  public Date: Date;
 };
