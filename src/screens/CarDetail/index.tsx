@@ -158,7 +158,7 @@ export default function CarDetail({ route }) {
         realm.create("CarTable", carDataUpdated, Realm.UpdateMode.Modified);
       });
 
-      setAcessoriePrice(null);
+      setAcessoriePrice(0);
       Alert.alert("Sucesso", "Acessório adicionado com sucesso!");
       handleCloseSnap();
     } catch (error) {
@@ -491,6 +491,7 @@ export default function CarDetail({ route }) {
           <Input
             placeholder="Insira o valor do acessório"
             onChangeText={handleAcessoriePrice}
+            value={acessoriePrice}
             keyboardType="number-pad"
             autoCorrect={false}
           />
