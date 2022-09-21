@@ -1,8 +1,7 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { TouchableOpacity } from "react-native";
 
-export const Container = styled(TouchableOpacity)`
+export const Container = styled.TouchableOpacity`
   flex-direction: row;
   width: 100%;
   height: ${RFValue(157)}px;
@@ -14,7 +13,7 @@ export const Container = styled(TouchableOpacity)`
 `;
 
 export const InfoCar = styled.View`
-  width: ${RFValue(160)}px;
+  width: ${RFValue(175)}px;
 `;
 
 export const OptionContainer = styled.View`
@@ -32,8 +31,14 @@ export const PriceContainer = styled.View`
   height: ${RFValue(27)}px;
 `;
 
+export const Pricevalue = styled.Text`
+  font-weight: bold;
+  font-size: ${RFValue(21)}px;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
 export const Option = styled.View`
-  width: ${RFValue(48)}px;
+  width: ${RFValue(58)}px;
   height: ${RFValue(30)}px;
 `;
 
@@ -47,12 +52,6 @@ export const TitleValue = styled.Text`
   font-weight: bold;
   font-size: ${RFValue(14)}px;
   color: ${({ theme }) => theme.colors.dark};
-`;
-
-export const Pricevalue = styled.Text`
-  font-weight: bold;
-  font-size: ${RFValue(20)}px;
-  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const InfoImg = styled.Image`

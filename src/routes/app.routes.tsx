@@ -30,10 +30,6 @@ export function AppRoutes() {
             backgroundColor: theme.colors.dark,
             height: 96,
           },
-          headerRight: () => (
-            //Todo: Delete car on Realm when onPress
-            <FeatherIcon name='trash' onPress={() => console.log('apagou o carro')} />
-          ),
           headerTitleAlign: "center",
           headerBackTitleVisible: false,
         })}

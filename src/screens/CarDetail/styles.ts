@@ -1,18 +1,24 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { TouchableOpacity, TouchableOpacityProps } from "react-native";
+import { ButtonProperties, TouchableOpacity, TouchableOpacityProps } from "react-native";
 
 interface TextProps extends TouchableOpacityProps {
   align: "left" | "center" | "right";
   color: "default" | "blue" | "dark";
   size: number;
-  onPress: () => void;
+  onPress?: () => void;
 }
 
 interface ButtonProps {
   isActive: boolean;
   onPress: () => void;
 }
+
+export const TrashIcon = styled.View<TouchableOpacityProps>`
+  position: absolute;
+  top: 0px;
+  right: 20px;
+`;
 
 export const Container = styled.View`
   flex: 1;
@@ -23,13 +29,13 @@ export const Container = styled.View`
 `;
 
 export const ImageContainer = styled.View`
-  margin-top: ${RFValue(10)}px;
+  margin-top: ${RFValue(20)}px;
   margin-bottom: ${RFValue(7)}px;
 `;
 
 export const CarImage = styled.Image`
-  height: ${RFValue(171)}px;
-  width: ${RFValue(358)}px;
+  height: ${RFValue(141)}px;
+  width: ${RFValue(348)}px;
 `;
 
 export const BrandName = styled.Text`
@@ -52,7 +58,7 @@ export const SpecificationContainer = styled.View`
   width: 100%;
 `;
 
-export const Cards = styled.ScrollView`
+export const Cards = styled.View`
   flex-direction: row;
   width: 100%;
 `;
@@ -72,8 +78,12 @@ export const Title = styled.Text<TextProps>`
 `;
 
 export const AcessoriesContainer = styled.View`
-  margin-top: ${RFValue(10)}px;
   height: ${RFValue(100)}px;
+  width: 100%;
+`;
+
+export const AcessItems = styled.View`
+  height: ${RFValue(40)}px;
   width: 100%;
 `;
 
@@ -83,13 +93,10 @@ export const TitleContainer = styled.View`
   align-items: center;
 `;
 
-export const AcessItems = styled.View`
-  height: ${RFValue(100)}px;
-  width: 100%;
-`;
-
 export const NoAcessoriesContainer = styled.View`
-  height: ${RFValue(100)}px;
+  align-items: center;
+  justify-content: center;
+  height: ${RFValue(50)}px;
   width: 100%;
 `;
 
@@ -128,7 +135,7 @@ export const AcessorieTypeContainer = styled.View`
   width: 100%;
 `;
 
-export const Acess = styled.ScrollView`
+export const Acess = styled.View`
   flex-direction: row;
 `;
 

@@ -1,12 +1,9 @@
 import React from 'react';
 
 import {
-  Container,
-  IconContainer,
-  Title,
-  TitleValue,
-  OptionContainer,
-  FeatherIcon,
+  Container, IconContainer,
+  Title, TitleValue,
+  OptionContainer, FeatherIcon,
 } from './styles';
 
 type SpecificationCardProps = {
