@@ -1,14 +1,17 @@
+import { useObject, useRealm } from "@src/database/realm";
 import React, { useCallback, useEffect, useState } from "react";
 import { Alert, ScrollView } from "react-native";
 import uuid from "react-native-uuid";
-import { useObject, useRealm } from "@src/database/realm";
 
 import { Button } from "@src/components/Button";
 import { Input } from "@src/components/Form/Input";
 
 import {
-  ButtonText,
   ButtonContainer,
+  ButtonText,
+  CombButtom,
+  CombContainer,
+  Combs,
   Container,
   Title,
   TransmissionButton,
@@ -16,13 +19,10 @@ import {
   TypeButtom,
   TypeContainer,
   Types,
-  CombContainer,
-  Combs,
-  CombButtom,
 } from "./styles";
 
+import { RootStackScreenProps } from "@src/routes/types";
 import * as Yup from "yup";
-import { useNavigation } from "@react-navigation/native";
 import { ResponseProps } from "../CarDetail";
 
 const schemaValidation = Yup.object().shape({
@@ -42,7 +42,10 @@ const schemaValidation = Yup.object().shape({
   color: Yup.string().required("Você deve inserie uma cor para o carro!"),
 });
 
-export default function CarRegister({ route }) {
+export default function CarRegister({
+  navigation,
+  route,
+}: RootStackScreenProps<"CarRegister">) {
   const [name, setName] = useState("");
   const [year, setYear] = useState(0);
   const [type, setType] = useState(0);
@@ -53,8 +56,10 @@ export default function CarRegister({ route }) {
   const [color, setColor] = useState("");
   const [imgUrl, setImgUrl] = useState("");
 
-  const carData = useObject<ResponseProps>("CarTable", route.params?.Id || '');
-  console.log(carData)
+  const carData = useObject<ResponseProps>(
+    "CarTable",
+    route.params?.IdMobile || ""
+  );
 
   useEffect(() => {
     if (carData) {
@@ -68,10 +73,7 @@ export default function CarRegister({ route }) {
       setColor(carData.Color);
       setImgUrl(carData.ImgUrl);
     }
-
   }, []);
-
-  const navigation = useNavigation();
 
   const realm = useRealm();
 
@@ -130,17 +132,19 @@ export default function CarRegister({ route }) {
         Color: color,
         ImgUrl: imgUrl,
         Date: !carData ? new Date() : carData.Date,
-      }
-      console.log(carObject)
+      };
 
       realm.write(() => {
-        const created = realm.create("CarTable", carObject, Realm.UpdateMode.Modified);
-        console.log(created)
+        const created = realm.create(
+          "CarTable",
+          carObject,
+          Realm.UpdateMode.Modified
+        );
       });
 
       Alert.alert("Sucesso", "Carro cadastro com sucesso!");
       setTimeout(() => {
-        navigation.navigate("home");
+        navigation.navigate("Home");
       }, 1500);
     } catch (error) {
       console.log(error);

@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
+import { TouchableOpacityProps } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-import Icon from "react-native-vector-icons/Feather";
+import styled from "styled-components/native";
 
 export const HeaderHomeContainer = styled.View`
   flex-direction: row;
@@ -24,27 +24,33 @@ export const TotalText = styled.Text`
   color: ${({ theme }) => theme.colors.white};
 `;
 
-export const HeaderDetailContainer = styled.View`
-  flex-direction: row;
-  width: 100%;
-  height: ${RFValue(86)};
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const IconContainer = styled.View`
-  height: ${RFValue(24)};
-  width: ${RFValue(24)};
-`;
-
-export const FeatherIcon = styled(Icon)`
-  color: ${({ theme }) => theme.colors.offWhite};
-  font-weight: bold;
-  font-size: ${RFValue(24)};
-`;
-
 export const Title = styled.Text`
+  align-items: center;
+  justify-content: center;
   color: ${({ theme }) => theme.colors.offWhite};
   font-weight: bold;
-  font-size: ${RFValue(20)};
+  font-size: ${RFValue(20)}px;
+`;
+
+export const ContainerHeader = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.gray};
+  padding: ${RFValue(42)}px 0 ${RFValue(16)}px 0;
+`;
+
+export const ContainerBackIcon = styled.View`
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  left: 16;
+  bottom: 0;
+`;
+
+export const ContainerTitle = styled.View`
+  flex: 1;
+  position: relative;
+  align-items: center;
+  padding: 0 ${RFValue(16)}px;
 `;

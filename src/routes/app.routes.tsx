@@ -1,64 +1,53 @@
 import * as React from "react";
-
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from "styled-components";
 
-import Home from '@src/screens/Home';
-import CarDetail from '@src/screens/CarDetail';
-import CarRegister from "@src/screens/CarRegister";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-//Todo: push props from the card to here and show on screen
-export function AppRoutes() {
-  const theme = useTheme();
+function shouldHeaderBeShown(routeName: string) {
+  switch (routeName) {
+    case "Home":
+      return false;
+    case "CarRegister":
+      return true;
+    case "CarDetail":
+      return true;
+    default:
+      return true;
+  }
+}
 
+import * as Routes from "./routes";
+import { useState } from "react";
+import { Header } from "@src/components/Header";
+
+function createScreens(components: any) {
   return (
-    <Navigator initialRouteName="home">
-      <Screen
-        name="home"
-        options={{ headerShown: false }}
-        component={Home}
-      />
-
-      <Screen
-        name="carDetail"
-        options={() => ({
-          title: 'Detalhes do Carro',
-          headerTintColor: theme.colors.offWhite,
-          headerStyle: {
-            backgroundColor: theme.colors.dark,
-            height: 96,
-          },
-          headerTitleAlign: "center",
-          headerBackTitleVisible: false,
-        })}
-        component={CarDetail}
-      />
-
-      <Screen
-        name="carRegister"
-        options={{
-          title: 'Carro',
-          headerTintColor: theme.colors.offWhite,
-          headerStyle: {
-            backgroundColor: theme.colors.dark
-
-          },
-          headerTitleAlign: "center",
-          headerBackTitleVisible: false,
-        }}
-        component={CarRegister}
-      />
-    </Navigator>
+    <>
+      {Object.entries(components).map(([key, value]) => (
+        <Screen key={key} name={key} component={value as any} />
+      ))}
+    </>
   );
 }
 
-import styled from 'styled-components/native';
-import Icon from 'react-native-vector-icons/Feather'
-import { TouchableOpacityProps } from "react-native";
+export function AppRoutes() {
+  const theme = useTheme();
+  const [initialRoute, setInitialRoute] = useState<string>("Home");
 
-export const FeatherIcon = styled(Icon) <TouchableOpacityProps>`
-  font-size: 30px;
-  color: ${({ theme }) => theme.colors.red};
-`;
+  return (
+    <Navigator
+      initialRouteName={initialRoute}
+      screenOptions={({ route }) => ({
+        contentStyle: { backgroundColor: theme.colors.background },
+        header: (props) => <Header {...props} />,
+        headerShown: shouldHeaderBeShown(route?.name),
+        headerBackTitleVisible: false,
+        gestureEnabled: false,
+      })}
+    >
+      {createScreens(Routes)}
+    </Navigator>
+  );
+}

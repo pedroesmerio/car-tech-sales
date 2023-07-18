@@ -1,16 +1,22 @@
-import React, { useMemo, useState } from 'react'
-import { useNavigation } from '@react-navigation/native'
+import React, { useMemo, useState } from "react";
 
-import { Header } from '@src/components/Header'
+import { HeaderHome } from "@src/components/Header";
 
-import { AddCarButtom, Container, InputContainer, NoCarContainer, Title } from './styles'
+import {
+  AddCarButtom,
+  Container,
+  InputContainer,
+  NoCarContainer,
+  Title,
+} from "./styles";
 
-import { Button } from '@src/components/Button'
-import { FlatList } from 'react-native'
-import { Card } from '@src/components/Card'
-import { FontistoIcon } from '@src/components/Icons/styles'
-import { useQuery } from '@src/database/realm'
-import { Input } from '@src/components/Form/Input'
+import { Button } from "@src/components/Button";
+import { Card } from "@src/components/Card";
+import { Input } from "@src/components/Form/Input";
+import { FontistoIcon } from "@src/components/Icons/styles";
+import { useQuery } from "@src/database/realm";
+import { RootStackScreenProps } from "@src/routes/types";
+import { FlatList } from "react-native";
 
 export type ResponseType = {
   IdMobile: string;
@@ -25,41 +31,40 @@ export type ResponseType = {
   ImgUrl: string;
   Date: Date;
   Accessories: AccessoriesSchema[];
-}
+};
 
 type AccessoriesSchema = {
   IdMobile: string;
   Accessorie: number;
   Price: number;
-}
+};
 
-export default function Home() {
-  const [input, setInput] = useState('');
+export default function Home({ navigation }: RootStackScreenProps<"Home">) {
+  const [input, setInput] = useState("");
 
-  const navigation = useNavigation();
-
-  const response = useQuery<ResponseType>("CarTable")
-  const carList = useMemo(() => response
-    .sorted("Date", true)
-    .filtered(`Name CONTAINS '${input}'`)
-    , [response]
+  const response = useQuery<ResponseType>("CarTable");
+  const carList = useMemo(
+    () => response.sorted("Date", true).filtered(`Name CONTAINS '${input}'`),
+    [response]
   );
 
+  // #region [HANDLERS]
   function handleFilter(value: string) {
-    setInput(value)
+    setInput(value);
   }
 
-  function gotoDetailPage(item: string) {
-    navigation.navigate('carDetail', { carId: `${item}` })
+  function handleNavigateToDetail(item: string) {
+    navigation.navigate("CarDetail", { IdMobile: `${item}` });
   }
 
-  function gotoRegisterPage(id: string) {
-    navigation.navigate('carRegister');
+  function handleNavigateToRegister() {
+    navigation.navigate("CarRegister");
   }
+  // #endregion [HANDLERS]
 
   return (
     <>
-      <Header totalCars={carList.length} />
+      <HeaderHome totalCars={carList.length} />
       <InputContainer>
         <Input
           placeholder="Nome do Carro"
@@ -85,28 +90,26 @@ export default function Home() {
               type={item.Model}
               basePrice={item.BasePrice}
               imgUrl={item.ImgUrl}
-              onPress={() => gotoDetailPage(item.IdMobile)}
+              onPress={() => handleNavigateToDetail(item.IdMobile)}
             />
           )}
-          style={{ flex: 1, width: '100%' }}
+          style={{ flex: 1, width: "100%" }}
           showsVerticalScrollIndicator={false}
           ListEmptyComponent={() => (
             <NoCarContainer>
-              <Title>
-                Nenhum carro encontrado
-              </Title>
+              <Title>Nenhum carro encontrado</Title>
               <Button
-                name='ADICIONAR'
-                type='add'
-                onPress={() => navigation.navigate('carRegister')}
+                name="ADICIONAR"
+                type="add"
+                onPress={() => navigation.navigate("CarRegister")}
               />
             </NoCarContainer>
           )}
         />
-        <AddCarButtom onPress={gotoRegisterPage}>
-          <FontistoIcon name='plus-a' color='white' size={44} />
+        <AddCarButtom onPress={handleNavigateToRegister}>
+          <FontistoIcon name="plus-a" color="white" size={44} />
         </AddCarButtom>
       </Container>
     </>
-  )
+  );
 }

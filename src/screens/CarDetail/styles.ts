@@ -1,6 +1,6 @@
-import styled from "styled-components/native";
+import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { ButtonProperties, TouchableOpacity, TouchableOpacityProps } from "react-native";
+import styled from "styled-components/native";
 
 interface TextProps extends TouchableOpacityProps {
   align: "left" | "center" | "right";
@@ -139,7 +139,7 @@ export const Acess = styled.View`
   flex-direction: row;
 `;
 
-export const AddAcessButtom = styled(TouchableOpacity) <ButtonProps> `
+export const AddAcessButtom = styled(TouchableOpacity)<ButtonProps>`
   width: ${RFValue(100)}px;
   height: ${RFValue(43)}px;
   padding: 10px;
@@ -147,7 +147,7 @@ export const AddAcessButtom = styled(TouchableOpacity) <ButtonProps> `
   justify-content: center;
   border: solid 2px
     ${({ isActive, theme }) =>
-    isActive === true ? theme.colors.primary : theme.colors.gray_medium};
+      isActive === true ? theme.colors.primary : theme.colors.gray_medium};
   border-radius: 8px;
 `;
 

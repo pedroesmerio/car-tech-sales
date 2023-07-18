@@ -1,12 +1,15 @@
 import React from "react";
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from "@react-navigation/native";
 
-import { AppRoutes } from './app.routes';
+import { AppRoutes } from "./app.routes";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export function Routes() {
   return (
-    <NavigationContainer>
-      <AppRoutes />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }

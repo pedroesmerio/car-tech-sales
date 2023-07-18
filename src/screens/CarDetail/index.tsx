@@ -48,6 +48,7 @@ const schemaValidation = Yup.object().shape({
 
 import { useRealm, useObject } from "@src/database/realm";
 import { FeatherIcon } from "@src/components/Icons/styles";
+import { RootStackScreenProps } from "@src/routes/types";
 
 export type ResponseProps = {
   IdMobile: string;
@@ -71,9 +72,11 @@ type AcessProps = {
   Date: Date;
 };
 
-export default function CarDetail({ route }) {
-  const navigation = useNavigation();
-  const carId = route.params.carId;
+export default function CarDetail({
+  navigation,
+  route,
+}: RootStackScreenProps<"CarDetail">) {
+  const carId = route.params.IdMobile;
 
   // Using useObject
   const carData = useObject<ResponseProps>("CarTable", carId);
@@ -81,7 +84,7 @@ export default function CarDetail({ route }) {
   const acessData = carData.Acessories;
 
   const [acessorieType, setAcessorieType] = useState<number>(0);
-  const [acessoriePrice, setAcessoriePrice] = useState<number>(null);
+  const [acessoriePrice, setAcessoriePrice] = useState(null);
 
   const acessPriceFormated = Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -176,7 +179,7 @@ export default function CarDetail({ route }) {
           realm.objects("CarTable").filtered(`IdMobile = '${carId}'`)
         );
         console.log(deleted);
-        navigation.navigate("home");
+        navigation.navigate("Home");
       });
       Alert.alert("Sucesso", "Carro REMOVIDO com sucesso!");
     } catch (error) {
@@ -401,7 +404,9 @@ export default function CarDetail({ route }) {
           name="EDITAR"
           type="edit"
           onPress={() =>
-            navigation.navigate("carRegister", { Id: `${carData.IdMobile}` })
+            navigation.navigate("CarRegister", {
+              IdMobile: `${carData.IdMobile}`,
+            })
           }
         />
       </FooterContainer>
@@ -490,7 +495,7 @@ export default function CarDetail({ route }) {
 
           <Input
             placeholder="Insira o valor do acessório"
-            onChangeText={handleAcessoriePrice}
+            onChangeText={() => handleAcessoriePrice}
             value={acessoriePrice}
             keyboardType="number-pad"
             autoCorrect={false}

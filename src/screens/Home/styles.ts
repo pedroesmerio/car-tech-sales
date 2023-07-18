@@ -1,10 +1,6 @@
-import styled from "styled-components/native";
-import { TouchableOpacity, TouchableOpacityProps } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-
-interface ButtonProps extends TouchableOpacityProps {
-  onPress: () => void;
-}
+import styled from "styled-components/native";
 
 export const InputContainer = styled.View`
   width: 100%;
@@ -37,7 +33,7 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.gray_medium};
 `;
 
-export const AddCarButtom = styled(TouchableOpacity) <ButtonProps>`
+export const AddCarButtom = styled(TouchableOpacity)`
   width: 70px;
   height: 70px;
   justify-content: center;
